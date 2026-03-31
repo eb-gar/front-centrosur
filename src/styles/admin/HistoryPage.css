@@ -710,7 +710,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .admin-layout {
     flex-direction: column;
   }
@@ -732,7 +732,10 @@
   .nav-menu {
     margin-top: 0;
     flex-direction: row;
+    flex-wrap: nowrap;
     gap: 0.5rem;
+    overflow-x: auto;
+    width: 100%;
   }
 
   .admin-main {

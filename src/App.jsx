@@ -6,7 +6,6 @@ import CategoryManager from "./pages/admin/CategoryManager";
 import HistoryPage from "./pages/admin/HistoryPage";
 import QRPage from "./pages/qr/qr";
 import AdminQuestionsAnswersPage from "./pages/admin/AdminQuestionsAnswersPage";
-import QuestionsAnswersPage from "./pages/admin/QuestionsAnswersPage";
 import { APP_ROUTES } from "./constants/appRoutes";
 
 export default function App() {
@@ -24,7 +23,7 @@ export default function App() {
 
       <Route
         path={APP_ROUTES.ADMIN_QA}
-        element={<AdminQuestionsAnswersPage />}
+        element={<AdminQuestionsAnswersPage hideSidebar />}
       />
 
       {/* CLIENT */}

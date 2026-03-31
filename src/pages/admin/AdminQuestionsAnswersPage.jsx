@@ -11,7 +11,7 @@ import { useQuestionsAndCategories } from "../../hooks/useQuestionsAndCategories
 import { useModeratorResponse } from "../../hooks/useModeratorResponse";
 import { getActiveQuestions } from "../../utils/questionFilters";
 
-export default function AdminQuestionsAnswersPage() {
+export default function AdminQuestionsAnswersPage({ hideSidebar = false }) {
   const {
     preguntas,
     setPreguntas,
@@ -124,7 +124,7 @@ export default function AdminQuestionsAnswersPage() {
 
   return (
     <div className="admin-layout">
-      <AdminSidebar activeItem="qa" />
+      {!hideSidebar && <AdminSidebar activeItem="qa" />}
 
       <main className="admin-main qa-main">
         <header className="content-header">
