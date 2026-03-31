@@ -4,7 +4,10 @@ import "../../styles/qr/qr.css";
 import { APP_ROUTES } from "../../constants/appRoutes";
 
 export default function QRPage() {
-  const questionUrl = `${window.location.origin}${APP_ROUTES.USER_QUESTION}`;
+  const questionUrl = new URL(
+    APP_ROUTES.USER_QUESTION,
+    window.location.href,
+  ).toString();
 
   return (
     <div className="qr-container">
