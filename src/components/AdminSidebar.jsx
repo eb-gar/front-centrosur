@@ -35,13 +35,6 @@ export default function AdminSidebar({ activeItem, showQaMenu = false }) {
         >
           <History size={20} /> Historial
         </button>
-        <button
-          className={activeItem === "qa" ? "active" : ""}
-          onClick={() => navigate(APP_ROUTES.ADMIN_QA)}
-          type="button"
-        >
-          <NotebookPen size={20} /> Preguntas y respuestas
-        </button>
       </nav>
     </aside>
   );
