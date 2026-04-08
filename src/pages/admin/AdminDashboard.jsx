@@ -195,7 +195,10 @@ export default function AdminDashboard() {
     setCreateQuestionError("");
 
     try {
-      const createdQuestion = await createQuestion({ content });
+      const createdQuestion = await createQuestion({
+        content,
+        createdByModerator: true,
+      });
 
       const updatedQuestion = await patchQuestion(
         createdQuestion.id,
@@ -337,6 +340,14 @@ export default function AdminDashboard() {
                         <span className="time-tag">
                           <Clock size={12} /> {formatRelativeTime(q.createdAt)}
                         </span>
+                        {q.createdByModerator && (
+                          <span
+                            className="origin-tag moderator-origin-tag"
+                            title="Esta pregunta fue creada desde el panel del moderador"
+                          >
+                            CREADA POR MODERADOR
+                          </span>
+                        )}
                       </div>
 
                       {isTodos ? (

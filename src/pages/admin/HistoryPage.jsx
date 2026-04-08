@@ -149,6 +149,14 @@ export default function HistoryPage() {
                       <span className="history-time">
                         <Clock size={12} /> {formatRelativeTime(q.createdAt)}
                       </span>
+                      {q.createdByModerator && (
+                        <span
+                          className="origin-tag history-origin-tag"
+                          title="Esta pregunta fue creada desde el panel del moderador"
+                        >
+                          CREADA POR MODERADOR
+                        </span>
+                      )}
                     </div>
 
                     {q.category ? (
@@ -218,6 +226,11 @@ export default function HistoryPage() {
                 Seguro que deseas eliminar este mensaje? Esta accion no se puede
                 deshacer.
               </p>
+              {preguntaAEliminar?.createdByModerator && (
+                <p className="confirm-warning">
+                  Esta pregunta fue creada desde el panel del moderador.
+                </p>
+              )}
               <div className="confirm-modal-actions">
                 <button
                   type="button"

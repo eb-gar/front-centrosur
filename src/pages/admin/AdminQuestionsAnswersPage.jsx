@@ -168,6 +168,14 @@ export default function AdminQuestionsAnswersPage({ hideSidebar = false }) {
                   <article className="q-card" key={q.id}>
                     {resolvedCategory && (
                       <div className="q-card-header">
+                        {q.createdByModerator && (
+                          <span
+                            className="origin-tag qa-origin-tag"
+                            title="Esta pregunta fue creada desde el panel del moderador"
+                          >
+                            CREADA POR MODERADOR
+                          </span>
+                        )}
                         <span
                           className="status-pill has-category"
                           style={{
@@ -177,6 +185,17 @@ export default function AdminQuestionsAnswersPage({ hideSidebar = false }) {
                           }}
                         >
                           {resolvedCategory.name}
+                        </span>
+                      </div>
+                    )}
+
+                    {!resolvedCategory && q.createdByModerator && (
+                      <div className="q-card-header">
+                        <span
+                          className="origin-tag qa-origin-tag"
+                          title="Esta pregunta fue creada desde el panel del moderador"
+                        >
+                          CREADA POR MODERADOR
                         </span>
                       </div>
                     )}
